@@ -27,7 +27,7 @@ input_text=st.text_input("Search the topic")
 
 ## LLM
 
-llm=ChatGoogleGenerativeAI(model="gemini-pro",temperature=0)
+llm=ChatGoogleGenerativeAI(model="gemini-2.5-flash",temperature=0)
 output_parser=StrOutputParser()
 
 chain=prompt|llm|output_parser
@@ -36,4 +36,3 @@ if input_text:
     response=chain.invoke({"question":input_text})
     st.write(response)
 
-    
